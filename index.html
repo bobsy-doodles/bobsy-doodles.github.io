@@ -189,23 +189,60 @@
                     </svg>
                 </div>
             </div>
-            <div class="form-wrapper">
-                <form action="https://formspree.io/f/mgoedazl" id="form" method="post">
-                    <input class="text-input" placeholder="Name" name="sender" required>
-                    <input class="text-input" placeholder="Email" name="senderEmail" required>
-                    <textarea class="text-input" placeholder="Message" name="message" style="height: 49px; overflow-y: hidden;" required></textarea>
-                    <input class="text-input" placeholder="How did you hear about Me?" name="saying" required>
-                </form>
-                <div class="button-wrapper">
-                    <button type="submit" class="button" form="form">
-                        <div class="svg-wrapper">
-                            <svg class="send" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48">
-                                <path d="M4.02 42L46 24 4.02 6 4 20l30 4-30 4z" />
-                                <path d="M0 0h48v48H0z" fill="none" />
-                            </svg>
-                        </div>
-                    </button>
-                </div>
+
+
+
+
+
+<!-- Read the Formbutton docs at formspree.io/formbutton/docs. See more examples at codepen.io/formspree -->
+<script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
+<script>
+  /* paste this line in verbatim */
+  window.formbutton=window.formbutton||function(){(formbutton.q=formbutton.q||[]).push(arguments)};
+  /* customize formbutton below*/     
+  formbutton("create", {
+    action: "https://formspree.io/f/mgoedazl",
+    title: "How can we help?",
+    fields: [
+       {
+        type: "name",
+        label: "Name",
+        name: "snder",
+        required: true,
+        placeholder: "Name"
+       }
+       { 
+        type: "email", 
+        label: "Email:", 
+        name: "email",
+        required: true,
+        placeholder: "your@email.com"
+      },
+      {
+        type: "textarea",
+        label: "Message:",
+        name: "message",
+        placeholder: "Message"
+      },
+      {
+        type: "textarea",
+        label: "saying",
+        name: "saying",
+        placeholder: "How did you hear about Me?"
+      { type: "submit" }      
+    ],
+    styles: {
+      title: {
+        backgroundColor: "gray"
+      },
+      button: {
+        backgroundColor: "gray"
+      }
+    }
+  });
+</script>
+            
+
             </div>
         </section>
     </div>
